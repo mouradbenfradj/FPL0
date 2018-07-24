@@ -1,14 +1,14 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/service_container.html
 parameters:
-    #parameter_name: value
-
+    sonata.admin.security.mask.builder.class: Sonata\AdminBundle\Security\Acl\Permission\MaskBuilder
 services:
    admin.article:
         class: ArticleBundle\Admin\ArticleAdmin
         arguments: [~, ArticleBundle\Entity\Article, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Article }
+        roles: [ ROLE_EDITOR ]
         public: true
    admin.paragraph:
         class: ArticleBundle\Admin\ParagraphAdmin
@@ -44,11 +44,13 @@ services:
         class: FrontendBundle\Admin\PriceChangesAdmin
         arguments: [~, FrontendBundle\Entity\PriceChanges, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Price Changes }
+            - { name: sonata.admin, manager_type: orm, label: Pre-Season }
         public: true
    admin.propablepricechanges:
         class: FrontendBundle\Admin\ProbablePriceChangesAdmin
         arguments: [~, FrontendBundle\Entity\ProbablePriceChanges, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: propable Price Changes }
+            - { name: sonata.admin, manager_type: orm, label: propable Pre-Season }
         public: true
+   security.acl.permission.map:
+       class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap

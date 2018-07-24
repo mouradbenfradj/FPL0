@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div id="preloader">
-        <div id="status">&nbsp;</div>
-    </div>
     <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
     <div class="container">
         <header id="header">
@@ -53,7 +50,7 @@
                             {% endblock %}
                         </li>
 
-                        <li><a href="{{ path('article_homepage',{'categorie':5}) }}">Price Changes</a></li>
+                        <li><a href="{{ path('article_homepage',{'categorie':5}) }}">Pre-Season</a></li>
                         <li><a href="{{ path('article_homepage',{'categorie':6}) }}">Injury Updates</a></li>
                         <li><a href="{{ path('article_homepage',{'categorie':7}) }}">FPL Clean Sheets</a></li>
                         <li><a href="{{ path('article_homepage',{'categorie':8}) }}">EPL Teams Current Lineups</a></li>

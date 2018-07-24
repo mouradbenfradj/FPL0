@@ -43,6 +43,7 @@ class ArticleAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id')->add('titre')->add('description')->add('categorie')->add('imageFile', null, array('template' => 'admin/image.html.twig'))->add('paragraphs');
+        $listMapper->addIdentifier('id')->add('titre')->add('categorie')->add('imageFile', null, array('template' => 'admin/image.html.twig'));
     }
+
 }
