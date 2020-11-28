@@ -9,6 +9,7 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
+
         $em = $this->getDoctrine()->getManager();
         $news = $em->getRepository('FrontendBundle:News')->findAll();
         $articles = $em->getRepository('ArticleBundle:Article')->findAll();

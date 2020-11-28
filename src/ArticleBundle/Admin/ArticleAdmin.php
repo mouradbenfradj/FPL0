@@ -45,5 +45,4 @@ class ArticleAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('id')->add('titre')->add('categorie')->add('imageFile', null, array('template' => 'admin/image.html.twig'));
     }
-
 }

@@ -109,7 +109,8 @@
                         <div class="single_page">
                             <ol class="breadcrumb">
                                 <li><a href="{{ path('frontend_homepage') }}">Home</a></li>
-                                <li><a href="{{ path('article_homepage',{'categorie': article.categorie}) }}">
+                                <li>
+                                    <a href="{{ path('article_homepage',{'categorie': article.categorie}) }}">
                                         {% if article.categorie == 1 %}
                                             Captain Choice
                                         {% elseif article.categorie == 2 %}
@@ -130,8 +131,9 @@
                                             Others
                                         {% elseif article.categorie == 10 %}
                                             Fixture Analysis
-                                        {% endif %}</a></li>
-
+                                        {% endif %}
+                                    </a>
+                                </li>
                             </ol>
                             <h1>{{ article.titre }}</h1>
                             <div class="post_commentbox"><a href="#"><i class="fa fa-user"></i>{{ article.utilisateur }}
